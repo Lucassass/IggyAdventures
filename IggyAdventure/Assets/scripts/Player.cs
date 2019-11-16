@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public static int currentHealth;
     private int maxHealth = 4;
     private Vector2 spawnLocation;
-    private bool isGrounded; 
+    private bool isGrounded;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
             Movedir = -1;
         }
 
-        GetComponent<Rigidbody2D>().velocity += new Vector2(moveSpeed*Movedir, jumpHeight*isJumping);
+        GetComponent<Rigidbody2D>().velocity += new Vector2(moveSpeed * Movedir, jumpHeight * isJumping);
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
     }
     public static void TakeDamage(int damage)
     {
-        currentHealth-=damage;
+        currentHealth -= damage;
     }
     public void SetSpawnLocation(Vector2 location)
     {
