@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 	private bool isLeft;
 	private bool isRight;
 	private int direction;
+	public int currentHealth;
+	private int maxHealth = 4;
 
 
 	private void Awake()
@@ -19,7 +21,7 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
 	// Update is called once per frame
