@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 	[SerializeField] private float jumpHeight = 4f;
 	[SerializeField] private float moveSpeed = 2f;
 	private rb m_Rigidbody2D;
+	private bool isLeft;
+	private bool isRight;
+	private int direction;
 
 
 	private void Awake()
@@ -31,13 +34,20 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
-				GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+			direction = 1;
+			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
 		}
 
 
 		if (Input.GetKeyDown(KeyCode.A))
 		{
+			direction = -1;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+		}
+		
+		if(Input.GetKeyDown(KeyCode.R))
+		{
+			public static Object Instasiate(Bullet original, new Vector2(direction, 2);
 		}
 	}
 		void IsDeath()
