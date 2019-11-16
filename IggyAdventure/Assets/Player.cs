@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 	private int direction;
 	public int currentHealth;
 	private int maxHealth = 4;
+	public Vector2 spawnlocation;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		IsDeath();
+		reSpawn();
 		if (Input.GetKey(KeyCode.R))
 		{
 			Instantiate(bullet, new Vector3(0, 0, 0), Quaternion.identity);
@@ -49,10 +50,21 @@ public class Player : MonoBehaviour
 			public static Object Instasiate(Bullet original, new Vector2(direction, 2);
 		}
 	}
-		void IsDeath()
+		void reSpawn()
 	{
 		if (currentHealth == 0) {
-			Destroy(gameObject);
+			transform.position = spawnLocation;	
 		}
 	}
+	
+		public void setSpawn(Vector2 vector)
+		{
+		
+		this.spawnLocation = vector;
+		}
+		
+		public static void takeDamage()
+		{
+			currentHealth--;
+		}
 }
