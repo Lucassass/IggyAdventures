@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+	public GameObject bullet;
 	[SerializeField] private float jumpHeight = 4f;
 	[SerializeField] private float moveSpeed = 2f;
-	private rb m_Rigidbody2D;
-	private bool isLeft;
-	private bool isRight;
 	private int direction;
 	public int currentHealth;
 	private int maxHealth = 4;
 
-
-	private void Awake()
-	{
-		rb = GetComponent<Rigidbody2D>();
-	}
 	// Start is called before the first frame update
 	void Start()
     {
@@ -27,7 +20,11 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-	IsDeath();
+		IsDeath();
+		if (Input.GetKey(KeyCode.R))
+		{
+			Instantiate(bullet, new Vector3(0, 0, 0), Quaternion.identity);
+		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
