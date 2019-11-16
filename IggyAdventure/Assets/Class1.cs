@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletSpawn : MonoBehaviour
+public class UpdateSpawn : MonoBehaviour
 {
 
 	// Start is called before the first frame update
@@ -14,5 +14,9 @@ public class BulletSpawn : MonoBehaviour
 	void Update()
 	{
 
+	}
+	void onTriggerEnter2D()
+	{
+	Player.setSpawn(this.gameObject.tranform.position);
 	}
 }
