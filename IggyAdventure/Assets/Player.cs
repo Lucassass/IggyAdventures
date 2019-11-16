@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
 {
 	[SerializeField] private float jumpHeight = 4f;
 	[SerializeField] private float moveSpeed = 2f;
-	private Rigidbody2D m_Rigidbody2D;
+	private rb m_Rigidbody2D;
 
 
 	private void Awake()
 	{
-		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 	// Start is called before the first frame update
 	void Start()
@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+	IsDeath();
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
@@ -37,6 +38,12 @@ public class Player : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
+		}
+	}
+		void IsDeath()
+	{
+		if (currentHealth == 0) {
+			Destroy(gameObject);
 		}
 	}
 }
