@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		reSpawn();
+		
 		if (Input.GetKey(KeyCode.R))
 		{
 			Instantiate(bullet, new Vector3(0, 0, 0), Quaternion.identity);
@@ -31,23 +32,16 @@ public class Player : MonoBehaviour
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
 		}
 
-
 		if (Input.GetKeyDown(KeyCode.D))
 		{
 			direction = 1;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
 		}
 
-
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			direction = -1;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
-		}
-		
-		if(Input.GetKeyDown(KeyCode.R))
-		{
-			public static Object Instasiate(Bullet original, new Vector2(direction, 2);
 		}
 	}
 		void reSpawn()
