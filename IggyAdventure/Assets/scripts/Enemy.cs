@@ -25,11 +25,13 @@ public class Enemy : MonoBehaviour
             this.GetComponent<EnemyPathing>().speed = 0;
         }
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Player.TakeDamage(1);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet")) {
+            Destroy(gameObject);
         }
     }
     public void SetRespawnTime()

@@ -14,12 +14,12 @@ public class Ladder : MonoBehaviour
     {
         var p = collision.gameObject.GetComponent<Rigidbody2D>();
         p.gravityScale = 0;
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
             //p.velocity = new Vector2(0f, 3.0f);
             p.transform.position = p.transform.position + new Vector3(0f, 0.1f, 0f);
 
-        } else if(Input.GetKey(KeyCode.DownArrow))
+        } else if(Input.GetKey(KeyCode.S))
         {
             p.velocity = new Vector2(0f, -3.0f);
             p.transform.position = p.transform.position - new Vector3(0f, 0.1f, 0f);

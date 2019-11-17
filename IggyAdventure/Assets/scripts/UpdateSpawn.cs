@@ -15,8 +15,9 @@ public class UpdateSpawn : MonoBehaviour
 	{
 
 	}
-	void onTriggerEnter2D(Collision2D collider)
+	void OnTriggerEnter2D(Collider2D collider)
 	{
+        Debug.Log("spawn updated");
         var p = collider;
         p.gameObject.GetComponent<Player>().SetSpawnLocation((this.gameObject.transform.position));
 	}

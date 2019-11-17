@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Killzone
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - player
   - 
   - 
   - 
@@ -38,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: wayback
+    uniqueID: 2780216079
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: play
+    uniqueID: 4169251107
     locked: 0
